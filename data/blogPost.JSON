@@ -1,5 +1,6 @@
 {
-"blogPosts": [{
+  "blogPosts": [
+  {
     "author": "Stephanie",
     "title": "Lemonade",
     "type": "Beverage",
@@ -8,10 +9,31 @@
   },
   {
       "author": "James",
-      "title": "s'mores",
+      "title": "S'mores",
       "type": "Dessert",
       "ingredients":["graham cracker", "chocolate", "marshmellow"] ,
       "instructions": "stack chocolate and marshmellow between graham cracker and roast"
-    }
+    },
+    {
+        "author": "Olivia",
+        "title": "Pancakes",
+        "type": "Breakfast",
+        "ingredients":["pancake batter", "eggs". "butter", "milk", "sugar"] ,
+        "instructions": "whip ingredients in bowl together then add batter to pan and cook both sides"
+      },
+      {
+          "author": "Emma",
+          "title": "Salad",
+          "type": "Lunch",
+          "ingredients":["arugula", "grapefruit", "salad dressing", "walnuts", "chickpeas"] ,
+          "instructions": "toss ingredients together, add dressing, and serve"
+      },
+      {
+          "author": "Ryan",
+          "title": "Pesto Pasta",
+          "type": "Dinner",
+          "ingredients":["pesto", "pasta", "cheese"] ,
+          "instructions": "boil pasta and drain, then heat pesto, add pasta, and serve with cheese"
+        }
   ]
 }
