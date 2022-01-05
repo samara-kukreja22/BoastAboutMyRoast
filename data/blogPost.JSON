@@ -1,8 +1,17 @@
 {
-"blogPost": {
-    "author": ,
-    "type": ,
-    "ingredients": ,
-    "instructions":
-  }
+"blogPosts": [{
+    "author": "Stephanie",
+    "title": "Lemonade",
+    "type": "Beverage",
+    "ingredients":["lemon", "water", "sugar"] ,
+    "instructions": "Slice lemons and then add water and sugar to glass"
+  },
+  {
+      "author": "James",
+      "title": "s'mores",
+      "type": "Dessert",
+      "ingredients":["graham cracker", "chocolate", "marshmellow"] ,
+      "instructions": "stack chocolate and marshmellow between graham cracker and roast"
+    }
+  ]
 }

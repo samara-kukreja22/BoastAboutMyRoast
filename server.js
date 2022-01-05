@@ -17,6 +17,35 @@ app.get('/', function(request, response) {
   response.render("index");
 });
 
+app.get('/blogPost/:index', function(request, response) {
+  let index = request.params.index;
+  let blogPosts = JSON.parse(fs.readFileSync('data/blogPost.json'));
+  if(blogPosts.blogPosts[index]){//if it exists
+    let post = blogPosts.blogPosts[index];//gets individual posts
+    response.status(200);
+    response.setHeader('Content-Type', 'text/html')
+    response.render("blogPost", {
+      post: post  
+    });
+  }
+  else{
+    response.status(404);
+    response.setHeader('Content-Type', 'text/html')
+    response.render("error", {
+      "errorCode":"404"
+    });
+  }
+});
+/*
+/author/name of the author(variable)
+/blogPost/index of blogPost in the list
+/submit
+/result(of submit)
+/blogPost/index/upVote
+/blogPost/index/downVote
+/popularity
+*/
+
 // Because routes/middleware are applied in order,
 // this will act as a default error route in case of
 // a request fot an invalid route
