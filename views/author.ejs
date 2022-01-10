@@ -19,7 +19,7 @@
     </head>
     <body>
       <%- include ('partials/navbar'); %>
-      <%- include ('partials/header');  %>
+      <%- include ('partials/header'); %>
 
       <% /*
         you want to loop through all the authors names and display it and their images
@@ -27,9 +27,10 @@
       */ %>
       <section id="authors">
         <h2>Authors:</h2>
-        <h3><% for(let i=0; i<authors.length; i++){ %>
-                <%= authors[i].name %>, <%}%></h3>
-                
+        <h3><% for(let i=0; i<author.length; i++){ %>
+                <%= author[i].name %>, <%}%></h3>
+            
+
     </section>
 
 

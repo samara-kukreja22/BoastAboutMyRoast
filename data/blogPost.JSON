@@ -3,6 +3,7 @@
   {
     "author": "Stephanie",
     "title": "Lemonade",
+    "photo": "https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.thespruceeats.com%2Fthmb%2FbOkzNHNuzGEH2UUAbmFBtTwAy6M%3D%2F2539x2539%2Fsmart%2Ffilters%3Ano_upscale()%2Fhomemade-lemonade-2216227-hero-02copy-767d28c1e7cf468db2282d77103d0bf4.jpg&imgrefurl=https%3A%2F%2Fwww.thespruceeats.com%2Fhomemade-lemonade-2216227&tbnid=Q57eDjiEO-6f-M&vet=12ahUKEwj1qPaxjaD1AhU1n3IEHRIIA4sQMygAegUIARCAAg..i&docid=H6S80lIUNLbE1M&w=2539&h=2539&itg=1&q=lemonade&ved=2ahUKEwj1qPaxjaD1AhU1n3IEHRIIA4sQMygAegUIARCAAg",
     "type": "Beverage",
     "ingredients":["lemon", "water", "sugar"] ,
     "instructions": "Slice lemons and then add water and sugar to glass"
@@ -10,6 +11,7 @@
   {
       "author": "James",
       "title": "S'mores",
+      "photo": "https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.thedailymeal.com%2Fsites%2Fdefault%2Ffiles%2Frecipe%2F2020%2Fs_mores-shutterstock-best-in-state.jpg&imgrefurl=https%3A%2F%2Fwww.thedailymeal.com%2Frecipes%2Fooey-gooey-smore-recipe&tbnid=qpY3q_Zi3zm1ZM&vet=12ahUKEwjnv5nGjaD1AhUzgHIEHUDKBAwQMygJegUIARD7AQ..i&docid=MpkWMQJQ41zEpM&w=1200&h=779&itg=1&q=s%27more&ved=2ahUKEwjnv5nGjaD1AhUzgHIEHUDKBAwQMygJegUIARD7AQ",
       "type": "Dessert",
       "ingredients":["graham cracker", "chocolate", "marshmellow"] ,
       "instructions": "stack chocolate and marshmellow between graham cracker and roast"
@@ -17,6 +19,7 @@
     {
         "author": "Olivia",
         "title": "Pancakes",
+        "photo": "https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.recipegirl.com%2Fwp-content%2Fuploads%2F2007%2F07%2FButtermilk-Pancakes-1.jpg&imgrefurl=https%3A%2F%2Fwww.recipegirl.com%2Fbuttermilk-pancakes%2F&tbnid=ar2YhR4o8BgdCM&vet=12ahUKEwjs0tLXjaD1AhV5mnIEHYPOCmEQMygHegUIARCUAg..i&docid=ZQFPJd_UTIe4dM&w=800&h=1200&itg=1&q=pancakes&ved=2ahUKEwjs0tLXjaD1AhV5mnIEHYPOCmEQMygHegUIARCUAg",
         "type": "Breakfast",
         "ingredients":["pancake batter", "eggs". "butter", "milk", "sugar"] ,
         "instructions": "whip ingredients in bowl together then add batter to pan and cook both sides"
@@ -24,6 +27,7 @@
       {
           "author": "Emma",
           "title": "Salad",
+          "photo": "https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn3.tmbi.com%2Ftoh%2FGoogleImagesPostCard%2FArugula-Salad-with-Shaved-Parmesan_exps87508_TH2379797B11_15_4bC_RMS.jpg&imgrefurl=https%3A%2F%2Fwww.tasteofhome.com%2Frecipes%2Farugula-salad-with-shaved-parmesan%2F&tbnid=r_mgAGSc02G5BM&vet=12ahUKEwjqlrbojaD1AhVLq3IEHVyoAzMQMygMegUIARCkAg..i&docid=xGLLLVQTror01M&w=1200&h=900&itg=1&q=arugula%20salad&ved=2ahUKEwjqlrbojaD1AhVLq3IEHVyoAzMQMygMegUIARCkAg",
           "type": "Lunch",
           "ingredients":["arugula", "grapefruit", "salad dressing", "walnuts", "chickpeas"] ,
           "instructions": "toss ingredients together, add dressing, and serve"
@@ -31,6 +35,7 @@
       {
           "author": "Ryan",
           "title": "Pesto Pasta",
+          "photo": "https://www.google.com/imgres?imgurl=https%3A%2F%2Fimagesvc.meredithcorp.io%2Fv3%2Fmm%2Fimage%3Fq%3D85%26c%3Dsc%26poi%3Dface%26w%3D1244%26h%3D622%26url%3Dhttps%253A%252F%252Fstatic.onecms.io%252Fwp-content%252Fuploads%252Fsites%252F43%252F2021%252F10%252F27%252FPesto-Pasta-Aja.jpg&imgrefurl=https%3A%2F%2Fwww.allrecipes.com%2Frecipe%2F11887%2Fpesto-pasta%2F&tbnid=IDkoPXxRsrrH7M&vet=12ahUKEwimo4j5jaD1AhVahXIEHUK8C0gQMygGegUIARCSAg..i&docid=49ai2KjSnvx2IM&w=1244&h=622&itg=1&q=pesto%20pasta&ved=2ahUKEwimo4j5jaD1AhVahXIEHUK8C0gQMygGegUIARCSAg",
           "type": "Dinner",
           "ingredients":["pesto", "pasta", "cheese"] ,
           "instructions": "boil pasta and drain, then heat pesto, add pasta, and serve with cheese"

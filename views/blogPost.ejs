@@ -7,11 +7,37 @@
   Requires one blogPost entity passing
   -->
 
-  <%- include('partials/header', {title:"Boast About My Roast"}) -%>
+  <!doctype html>
+  <html lang="en">
 
-  <p> Welcome to the official site of Boast About My Roast! An easy guide to cooking and posting recipes!
-    <br>
-    <br>
-    <a href="/blogPost">Click to view latest blog posts!</a>
+  <head>
+    <meta charset="utf-8" />
+    <title>Author</title>
+    <meta name="author" content="Samara">
+    <meta name="description" content="A visual representation of Plastic Waste by Country">
+    <meta content="text/html" http-equiv="Content-type" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <%- include ('partials/navbar'); %>
+    <%- include ('partials/header'); %>
+    <section id="posts">
+      <h2>Blog Posts:</h2>
+      <%for(let i = 0; i < post.length; i++){%>
+        <h3><%=post[i].title%></h3>
+        <img src="<%=post[i].image%>" height=150 />
+        <h5><%=post[i].type%></h5>
+        <h5><%=post[i].ingredients%></h5>
+        <p><%=post[i].instructions%></p>
+      }
+      <button type = "button">upVote</button>
+      <button type = "button">downVote</button>
+  </section>
+<!--upvote and downvote buttons for each post -->
 
-    <%- include('partials/footer') -%>
+    <%- include ('partials/footer'); %>
+  </body>
+  </html>
