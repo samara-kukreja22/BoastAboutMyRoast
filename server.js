@@ -17,15 +17,46 @@ app.get('/', function(request, response) {
   response.render("index");
 });
 
-app.get('/author: name', function(request, response) {
-  let name = request.params.index;
+/*
+/author/name of the author(variable)
+/blogPost/index of blogPost in the list
+/submit
+/result(of submit)
+/blogPost/index/upVote
+/blogPost/index/downVote
+/popularity
+*/
+
+// Because routes/middleware are applied in order,
+// this will act as a default error route in case of
+// a request fot an invalid route
+app.get('/authors', function(request, response) {//specific authors
   let authors = JSON.parse(fs.readFileSync('data/authors.json'));
-  if(authors.authors[name]){//if it exists
-    let author = author.authors[name];//gets individual author
+    response.status(200);
+    response.setHeader('Content-Type', 'text/html')
+    response.render("authors", {
+      title: "List of Authors",
+      authors: authors
+    });
+});
+
+app.get('/author/:name', function(request, response) {//specific authors
+  let name = request.params.name;
+  let authors = JSON.parse(fs.readFileSync('data/authors.json'));
+  let posts  = JSON.parse(fs.readFileSync('data/blogPost.json'));
+  if(authors[name]){//if it exists
+    let author = authors[name];//gets individual author
+    authorPosts = [];
+    for(postNum of author.posts){//id of each post of the author
+      let post = posts.blogPosts[postNum];//documents.key[list of posts]
+      authorPosts.push(post);
+    }
     response.status(200);
     response.setHeader('Content-Type', 'text/html')
     response.render("author", {
-      author: author
+      title: "Author",
+      author: author,
+      posts: authorPosts
     });
   }
   else{
@@ -37,6 +68,16 @@ app.get('/author: name', function(request, response) {
   }
 });
 
+app.get('/blogPost', function(request, response) {
+    let posts  = JSON.parse(fs.readFileSync('data/blogPost.json'));
+    response.status(200);
+    response.setHeader('Content-Type', 'text/html')
+    response.render("blogPost", {
+      title: "Blog Posts",
+      posts: posts.blogPosts
+    });
+});
+/*
 app.get('/blogPost/:index', function(request, response) {
   let index = request.params.index;
   let blogPosts = JSON.parse(fs.readFileSync('data/blogPost.json'));
@@ -55,62 +96,52 @@ app.get('/blogPost/:index', function(request, response) {
       "errorCode":"404"
     });
   }
-});
+});*/
 
 app.get('/blogPost/:upVote', function(request, response) {
 
-    });
-  }
-  else{
+  //else{
     response.status(404);
     response.setHeader('Content-Type', 'text/html')
     response.render("error", {
       "errorCode":"404"
     });
-  }
+//  }
 });
 
 app.get('/blogPost/:downVote', function(request, response) {
 
-    });
-  }
-  else{
+
+  //else{
     response.status(404);
     response.setHeader('Content-Type', 'text/html')
     response.render("error", {
       "errorCode":"404"
     });
-  }
+  //}
 });
 
 app.get('/popularity', function(request, response) {
   let authors = JSON.parse(fs.readFileSync('data/authors.json'));
   let authorArray = [];
   let blogPosts = JSON.parse(fs.readFileSync('data/blogPosts.json'));
-  let post = blogPosts.blogPosts[index];//individual post
+
   //calculate the popularity percentage
-  }
-  else{
-    response.status(404);
-    response.setHeader('Content-Type', 'text/html')
-    response.render("error", {
-      "errorCode":"404"
-    });
-  }
+
 });
 
 app.get('/blogPostCreate', function(request, response) {
   response.status(200);
   response.setHeader('Content-Type', 'text/html')
   response.render("blogPostCreate");
-  }
-  else{
+
+//  else{
     response.status(404);
     response.setHeader('Content-Type', 'text/html')
     response.render("error", {
       "errorCode":"404"
     });
-  }
+  //}
 });
 
 app.post('/blogPostCreate', function(request, response) {
@@ -121,50 +152,15 @@ app.post('/blogPostCreate', function(request, response) {
   //list of ingredients
   //type in instructions
 
-    else{
+  //  else{
       response.status(400);
       response.setHeader('Content-Type', 'text/html')
       response.render("error", {
         "errorCode":"400"
       });
-    }
+  //  }
 });
 
-app.post('/opponentCreate', function(request, response) {
-    let opponentName = request.body.opponentName;
-    let opponentPhoto = request.body.opponentPhoto;
-    if(opponentName&&opponentPhoto){
-      let opponents = JSON.parse(fs.readFileSync('data/opponents.json'));
-      let newOpponent={
-        "name": opponentName,
-        "photo": opponentPhoto,
-        "win":0,
-        "lose": 0,
-        "tie": 0,
-      }
-      opponents[opponentName] = newOpponent;
-      fs.writeFileSync('data/opponents.json', JSON.stringify(opponents));
-
-      response.status(200);
-      response.setHeader('Content-Type', 'text/html')
-      response.redirect("/opponent/"+opponentName);
-    }
-});
-
-
-/*
-/author/name of the author(variable)
-/blogPost/index of blogPost in the list
-/submit
-/result(of submit)
-/blogPost/index/upVote
-/blogPost/index/downVote
-/popularity
-*/
-
-// Because routes/middleware are applied in order,
-// this will act as a default error route in case of
-// a request fot an invalid route
 app.use("", function(request, response){
   response.status(404);
   response.setHeader('Content-Type', 'text/html')

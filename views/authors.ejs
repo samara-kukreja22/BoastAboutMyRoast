@@ -1,0 +1,18 @@
+<%- include ('partials/header'); %>
+  <% /*
+      you want to loop through all the authors names and display it and their images
+
+      */ %>
+      <section id="authors">
+        <h3>Authors</h3>
+        <h3><% for(let [name, data] of Object.entries(authors)){ %>
+              <a href="/author/<%=data.name%>"><%=data.name%></a>,
+                <%}%></h3>
+
+    </section>
+
+
+      <%- include ('partials/footer');  %>
+    </body>
+
+    </html>
