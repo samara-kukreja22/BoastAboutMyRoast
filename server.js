@@ -122,9 +122,24 @@ app.get('/blogPost/:downVote', function(request, response) {
 });
 
 app.get('/popularity', function(request, response) {
+  //calculate the popularity percentage
+  let posts  = JSON.parse(fs.readFileSync('data/blogPost.json'));
   let authors = JSON.parse(fs.readFileSync('data/authors.json'));
-  let authorArray = [];
-  let blogPosts = JSON.parse(fs.readFileSync('data/blogPosts.json'));
+  if(authors[name]){//if it exists
+    let author = authors[name];//gets individual author
+    authorPosts = [];
+    for(postNum of author.posts){//id of each post of the author
+      let post = posts.blogPosts[postNum];//list of authors posts
+      authorPosts.push(post);
+    }
+    response.status(200);
+    response.setHeader('Content-Type', 'text/html')
+    response.render("author", {
+      title: "Author",
+      author: author,
+      posts: authorPosts
+    });
+  }
 
   //calculate the popularity percentage
 
