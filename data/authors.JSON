@@ -1,43 +1,43 @@
 {
-  "Ariel": {
-    "name": "Ariel",
-    "photo": "https://upload.wikimedia.org/wikipedia/en/7/77/Ariel_disney.png",
+  "Homer": {
+    "name": "Homer",
+    "photo": "https://upload.wikimedia.org/wikipedia/en/0/02/Homer_Simpson_2006.png",
     "posts": [
       0
     ],
     "upVotes": 0,
     "downVotes": 0
   },
-  "Flynn": {
-    "name": "Flynn",
-    "photo": "https://upload.wikimedia.org/wikipedia/en/4/48/Flynn_Rider_Eugene_Fitzherbert_Tangled.png",
+  "Marge": {
+    "name": "Marge",
+    "photo": "https://upload.wikimedia.org/wikipedia/en/0/0b/Marge_Simpson.png",
     "posts": [
       1
     ],
     "upVotes": 0,
     "downVotes": 0
   },
-  "Mulan": {
-    "name": "Mulan",
-    "photo": "https://upload.wikimedia.org/wikipedia/en/1/17/Mulan_disney.png",
+  "Bart": {
+    "name": "Bart",
+    "photo": "https://upload.wikimedia.org/wikipedia/en/a/aa/Bart_Simpson_200px.png",
     "posts": [
       2
     ],
     "upVotes": 0,
     "downVotes": 0
   },
-  "Belle": {
-    "name": "Belle",
-    "photo": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d5/Belle_disney.png/220px-Belle_disney.png",
+  "Lisa": {
+    "name": "Lisa",
+    "photo": "https://upload.wikimedia.org/wikipedia/en/e/ec/Lisa_Simpson.png",
     "posts": [
       3
     ],
     "upVotes": 0,
     "downVotes": 0
   },
-  "Aladdin": {
-    "name": "Aladdin",
-    "photo": "https://upload.wikimedia.org/wikipedia/en/thumb/b/be/Aladdin_Disney_pose.png/220px-Aladdin_Disney_pose.png",
+  "Mr. Burns": {
+    "name": "Mr. Burns",
+    "photo": "https://upload.wikimedia.org/wikipedia/en/5/56/Mr_Burns.png",
     "posts": [
       4
     ],
