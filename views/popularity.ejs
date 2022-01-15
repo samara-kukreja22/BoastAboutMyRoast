@@ -2,36 +2,34 @@
   A list/table of recipe titles alongside their calculated popularity score
   Requires the list of recipes and the popularity score
   -->
-    <%- include ('partials/navbar'); %>
-    <h2>Trending</h2>
-    <table>
+    <%- include ('partials/header'); %>
+    <h2><center><u>Trending</u></center></h2><br>
+    <table class="center">
       <tr>
         <th>
-          Recipes
+          Rank
         </th>
         <th>
-          Trending %
+          Score
         </th>
         <th>
           Author
         </th>
       </tr>
-      <!-- for loop -->
-      <tr>
-        <th>
-          <!-- the recipe name -->
-        </th>
-        <th>
-          <!-- the popularity percentage -->
-        </th>
-        <th>
-          <!-- link to author page of their recipes... -->
-          <%for(let i = 0; i < author.length; i++){%>
-            <a href="/author/<%=author[i].name%>"><%=author[i].name%></a>
-          <%}%>
-        </th>
-      </tr>
+      <%for(let i = 0; i<scores.length; i++){%>
+        <tr>
+          <td><%=i+1%></td>
+          <td><%=scores[i][0]%></td><!--gets the score pair -->
+          <td>
+            <a href = "/author/<%=scores[i][1]%>">
+            <%=scores[i][1]%>
+            </a>
+          </td>
+        </tr>
+      <%}%>
+
+
+
     </table>
+<br><br>
     <%- include ('partials/footer');  %>
-</body>
-</html>

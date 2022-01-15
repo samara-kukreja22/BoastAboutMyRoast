@@ -19,5 +19,6 @@
   "homepage": "https://github.com/samara-kukreja22/BoastAboutMyRoast#readme",
   "dependencies": {
     "ejs": "^3.1.6"
-  }
+  },
+  "devDependencies": {}
 }

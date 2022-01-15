@@ -11,6 +11,23 @@ app.use(express.static('public')); //specify location of static assests
 app.set('views', __dirname + '/views'); //specify location of templates
 app.set('view engine', 'ejs'); //specify templating library
 
+function readAuthors(){
+  //read the authors and return
+  let authors = JSON.parse(fs.readFileSync('data/authors.json'));
+  return authors;
+}
+function writeAuthors(authors){
+  fs.writeFileSync('data/authors.json', JSON.stringify(authors));
+}
+
+function readPosts(){
+  let posts  = JSON.parse(fs.readFileSync('data/blogPost.json'));
+  return posts;
+}
+function writePosts(posts){
+  fs.writeFileSync('data/blogPost.json', JSON.stringify(posts));
+}
+
 app.get('/', function(request, response) {
   response.status(200);
   response.setHeader('Content-Type', 'text/html')
@@ -98,51 +115,81 @@ app.get('/blogPost/:index', function(request, response) {
   }
 });*/
 
-app.get('/blogPost/:upVote', function(request, response) {
-
-  //else{
+app.get('/blogPost/:index/upVote', function(request, response) {
+    let posts = readPosts();
+    let authors = readAuthors();
+    let index = request.params.index;
+    if(index < posts.blogPosts.length){
+      //find the blog Posts
+      let post = posts.blogPosts[index];
+      //get author from post
+      let author = post.author;
+      //increase the authors upVotes
+      authors[author].upVotes+=1;
+      //write the authors back to file
+      writeAuthors(authors);
+      response.status(200);
+      response.setHeader('Content-Type', 'text/html')
+      response.redirect("/author/" + author);
+    }
+  else{
     response.status(404);
     response.setHeader('Content-Type', 'text/html')
     response.render("error", {
       "errorCode":"404"
     });
-//  }
+  }
 });
 
-app.get('/blogPost/:downVote', function(request, response) {
-
-
-  //else{
+app.get('/blogPost/:index/downVote', function(request, response) {
+  let posts = readPosts();
+  let authors = readAuthors();
+  let index = request.params.index;
+  if(index < posts.blogPosts.length){
+    //find the blog Posts
+    let post = posts.blogPosts[index];
+    //get author from post
+    let author = post.author;
+    //increase the authors upVotes
+    authors[author].downVotes+=1;
+    //write the authors back to file
+    writeAuthors(authors);
+    response.status(200);
+    response.setHeader('Content-Type', 'text/html')
+    response.redirect("/author/" + author);
+  }
+  else{
     response.status(404);
     response.setHeader('Content-Type', 'text/html')
     response.render("error", {
       "errorCode":"404"
     });
-  //}
+  }
 });
 
 app.get('/popularity', function(request, response) {
   //calculate the popularity percentage
-  let posts  = JSON.parse(fs.readFileSync('data/blogPost.json'));
-  let authors = JSON.parse(fs.readFileSync('data/authors.json'));
-  if(authors[name]){//if it exists
-    let author = authors[name];//gets individual author
-    authorPosts = [];
-    for(postNum of author.posts){//id of each post of the author
-      let post = posts.blogPosts[postNum];//list of authors posts
-      authorPosts.push(post);
+  let authors = readAuthors();
+  //make a list to hold sorted Authors in the form of (score, author)
+  let scores = [];
+  for(let [name, data] of Object.entries(authors)){
+    let score = 0;
+    let total = data.upVotes + data.downVotes;
+    if(total > 0){
+      score = data.upVotes/total;
     }
-    response.status(200);
-    response.setHeader('Content-Type', 'text/html')
-    response.render("author", {
-      title: "Author",
-      author: author,
-      posts: authorPosts
-    });
+    let ratio = [score,name];
+    scores.push(ratio);
   }
-
-  //calculate the popularity percentage
-
+  //sort the information
+  scores.sort();
+  scores.reverse();
+  response.status(200);
+  response.setHeader('Content-Type', 'text/html')
+  response.render("popularity", {
+    title: "Popularity",
+    scores: scores
+  });
 });
 
 app.get('/blogPostCreate', function(request, response) {

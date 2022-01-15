@@ -1,0 +1,56 @@
+body{
+  background-color: rgb(194, 213, 255);
+}
+
+h2 {
+  font-size: 35px;
+  font-family: "optima", sans-serif;
+}
+h3 {
+  font-size: 30px;
+  font-family: "optima", sans-serif;
+}
+h4{
+  font-size: 25px;
+  font-family: "optima", sans-serif;
+}
+h5{
+  font-size: 20px;
+  font-family: "optima", sans-serif;
+}
+h6{
+  font-size: 20px;
+  font-family: "Apple Chancery", cursive;
+}
+a.button {
+  -webkit-appearance: button;
+   -moz-appearance: button;
+   appearance: button;
+
+   text-decoration: none;
+   color: initial;
+  font-size: 12px;
+  border-radius: 6px;
+  border: 2px solid #000000;
+  padding: 7px 12px;
+}
+a.button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+table, th, td {
+  font-size: 20px;
+  font-family: "Verdana", sans-serif;
+  border: 2px solid black;
+  padding: 25px;
+  width: 50%;
+  text-align: center;
+}
+
+tr:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}

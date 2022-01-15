@@ -4,18 +4,20 @@
     Data passed in would be a single author entity, list of blog post entities
     -->
     <%- include ('partials/header'); %>
-    <h4><%=author.name%></h4>
+    <h2><u><center><%=author.name%></center></u></h2>
       <section id="author">
-        <h3><img src = "<%=author.photo%>"></h3>
+        <h3><center><img src = "<%=author.photo%>" height=150></center></h3>
+        <h5>upVotes: <%=author.upVotes%></h5>
+        <h5>downVotes: <%=author.downVotes%></h5>
         <h3><%for(let i = 0; i < posts.length; i++){%>
         <% var post = posts[i];%>
         <div class = "blogPost">
-          <h1><%=post.title%></h1>
-          <h3><%=post.type%></h3>
-          <h3>Ingredients:</h3>
-          <h4><%=post.ingredients%></h4>
-          <h3>Instructions: </h3>
-          <p><%=post.instructions%></p>
+          <h3><u><%=post.title%></u></h3>
+          <h5><%=post.type%></h5>
+          <h4>Ingredients:</h4>
+          <h6><%=post.ingredients%></h6>
+          <h4>Instructions: </h4>
+          <h6><%=post.instructions%></h6>
         </div>
         <%}%></h3>
 
