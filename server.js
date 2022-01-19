@@ -193,34 +193,49 @@ app.get('/popularity', function(request, response) {
 });
 
 app.get('/blogPostCreate', function(request, response) {
+  console.log("user loaded submit form");
   response.status(200);
   response.setHeader('Content-Type', 'text/html')
-  response.render("blogPostCreate");
-
-//  else{
-    response.status(404);
-    response.setHeader('Content-Type', 'text/html')
-    response.render("error", {
-      "errorCode":"404"
-    });
-  //}
+  response.render("blogPostCreate", {
+    title: "Create a Blog Post!"
+  });
 });
 
 app.post('/blogPostCreate', function(request, response) {
-  //choose from which author to add
-  //type in a title
-  //link a photo
-  //choose a type of food it is
-  //list of ingredients
-  //type in instructions
+  //read each input and put into variable
+  console.log("user submitted a post");
+  let author = request.body.author;
+  let title = request.body.title;
+  let postPhoto = request.body.postPhoto;
+  let type = request.body.types;
+  let ingredients = request.body.ingredients.split(',');
+  let instructions = request.body.instructions;
+  let posts = readPosts();
+  let post = {
+    author: author,
+    title: title,
+    photo: postPhoto,
+    type: type,
+    ingredients: ingredients,
+    instructions: instructions
+  };
+  posts.blogPosts.push(post);
+  writePosts(posts);
+  //load the Authors
+  let authors = readAuthors();
+  //calculate the post number as the length of posts.blogPosts-1
+  let postNumber = posts.blogPosts.length-1;
+  authors[author].posts.push(postNumber);
+  writeAuthors(authors);
+  response.status(200);
+  response.setHeader('Content-Type', 'text/html')
+  response.redirect("/blogPost");
 
-  //  else{
-      response.status(400);
-      response.setHeader('Content-Type', 'text/html')
-      response.render("error", {
-        "errorCode":"400"
-      });
-  //  }
+  /*{
+    response.status(200);
+    response.setHeader('Content-Type', 'text/html')
+    response.redirect("/error");
+/  }*/
 });
 
 app.use("", function(request, response){
