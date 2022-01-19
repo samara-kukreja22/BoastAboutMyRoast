@@ -22,7 +22,7 @@
         " chocolate",
         " marshmellow"
       ],
-      "instructions": "stack chocolate and marshmellow between graham cracker and roast"
+      "instructions": "Stack chocolate and marshmellow between graham cracker and roast"
     },
     {
       "author": "Bart",
@@ -36,7 +36,7 @@
         " milk",
         " sugar"
       ],
-      "instructions": "whip ingredients in bowl together then add batter to pan and cook both sides"
+      "instructions": "Whip ingredients in bowl together then add batter to pan and cook both sides"
     },
     {
       "author": "Lisa",
@@ -50,7 +50,7 @@
         " walnuts",
         " chickpeas"
       ],
-      "instructions": "toss ingredients together, add dressing, and serve"
+      "instructions": "Toss ingredients together, add dressing, and serve"
     },
     {
       "author": "Mr. Burns",
@@ -62,7 +62,7 @@
         " pasta",
         " cheese"
       ],
-      "instructions": "boil pasta and drain, then heat pesto, add pasta, and serve with cheese"
+      "instructions": "Boil pasta and drain, then heat pesto, add pasta, and serve with cheese"
     }
   ]
 }

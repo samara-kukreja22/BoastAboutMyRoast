@@ -203,7 +203,6 @@ app.get('/blogPostCreate', function(request, response) {
 
 app.post('/blogPostCreate', function(request, response) {
   //read each input and put into variable
-  console.log("user submitted a post");
   let author = request.body.author;
   let title = request.body.title;
   let postPhoto = request.body.postPhoto;
