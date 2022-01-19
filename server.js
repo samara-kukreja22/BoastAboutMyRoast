@@ -116,30 +116,30 @@ app.get('/blogPost/:index', function(request, response) {
 });*/
 
 app.get('/blogPost/:index/upVote', function(request, response) {
-    let posts = readPosts();
-    let authors = readAuthors();
-    let index = request.params.index;
-    if(index < posts.blogPosts.length){
-      //find the blog Posts
-      let post = posts.blogPosts[index];
-      //get author from post
-      let author = post.author;
-      //increase the authors upVotes
-      authors[author].upVotes+=1;
-      //write the authors back to file
-      writeAuthors(authors);
-      response.status(200);
+      let posts = readPosts();
+      let authors = readAuthors();
+      let index = request.params.index;
+      if(index < posts.blogPosts.length){
+        //find the blog Posts
+        let post = posts.blogPosts[index];
+        //get author from post
+        let author = post.author;
+        //increase the authors upVotes
+        authors[author].upVotes+=1;
+        //write the authors back to file
+        writeAuthors(authors);
+        response.status(200);
+        response.setHeader('Content-Type', 'text/html')
+        response.redirect("/author/" + author);
+      }
+    else{
+      response.status(404);
       response.setHeader('Content-Type', 'text/html')
-      response.redirect("/author/" + author);
+      response.render("error", {
+        "errorCode":"404"
+      });
     }
-  else{
-    response.status(404);
-    response.setHeader('Content-Type', 'text/html')
-    response.render("error", {
-      "errorCode":"404"
-    });
-  }
-});
+  });
 
 app.get('/blogPost/:index/downVote', function(request, response) {
   let posts = readPosts();
