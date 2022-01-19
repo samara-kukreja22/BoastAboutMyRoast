@@ -3,7 +3,7 @@
     "name": "Homer",
     "photo": "https://upload.wikimedia.org/wikipedia/en/0/02/Homer_Simpson_2006.png",
     "posts": [
-      0,
+      0
     ],
     "upVotes": 0,
     "downVotes": 0
@@ -21,7 +21,7 @@
     "name": "Bart",
     "photo": "https://upload.wikimedia.org/wikipedia/en/a/aa/Bart_Simpson_200px.png",
     "posts": [
-      2,
+      2
     ],
     "upVotes": 0,
     "downVotes": 0
