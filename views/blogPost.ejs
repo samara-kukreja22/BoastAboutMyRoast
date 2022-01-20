@@ -9,17 +9,17 @@
 
 <%- include ('partials/header'); %>
 <body>
-    <h2><center><u>Blog Posts!</u></center></h2>
+    <h2><center><u>Blog Posts!</u></center></h2><br>
     <section id="posts">
       <% for(let i = 0; i < posts.length; i++){%>
-        <h4><u><%=posts[i].title%></u></h4>
-        <h5>By: <%=posts[i].author%></h5>
-        <img src="<%=posts[i].photo%>" height=150><br>
-        <h6><%=posts[i].type%></h6>
-        <h6><%=posts[i].ingredients%></h6>
-        <p><%=posts[i].instructions%></p>
-      <a href = "/blogPost/<%=i%>/upVote" class = "button">upVote</a>
-      <a href = "/blogPost/<%=i%>/downVote" class = "button">downVote</a><br><br>
+        <h4><center><u><%=posts[i].title%></u></center></h4>
+        <h5><center>By: <%=posts[i].author%></center></h5>
+        <center><img src="<%=posts[i].photo%>" height=150><br></center>
+        <h6><center><%=posts[i].type%></center></h6>
+        <h6><center><%=posts[i].ingredients%></center></h6>
+        <p><center><%=posts[i].instructions%></center></p>
+      <center><a href = "/blogPost/<%=i%>/upVote" class = "button">upVote</a>
+    <a href = "/blogPost/<%=i%>/downVote" class = "button">downVote</a></center><br><br>
       <%}%>
   </section>
 <!--upvote and downvote buttons for each post -->

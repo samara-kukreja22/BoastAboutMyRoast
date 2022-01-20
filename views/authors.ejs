@@ -1,9 +1,9 @@
 <%- include ('partials/header'); %>
       <section id="authors">
         <h2><center><u>Authors</u></center></h2>
-        <h4><% for(let [name, data] of Object.entries(authors)){ %>
+        <center><h4><% for(let [name, data] of Object.entries(authors)){ %>
               <a href="/author/<%=data.name%>"><%=data.name%></a><br>
-                <%}%></h4>
+                <%}%></h4></center>
         <br><br>
 
     </section>

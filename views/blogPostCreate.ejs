@@ -1,8 +1,8 @@
 <%- include ('partials/header'); %>
 
-  <h4>Create a Blog Post!</h4>
+  <h3>Create a Blog Post!</h3>
     <form action="/blogPostCreate" method="POST" id="form">
-      <label for="author">Author:</label>
+    <label for="author">Author:</label>
       <select name="author" id="author">
         <option value="Homer">Homer</option>
         <option value="Marge">Marge</option>
@@ -32,6 +32,6 @@
       <label for="instructions">Instructions:</label>
       <input type="text" id="instructions" name="instructions" value=""><br>
       <br><br>
-      <input type="submit" value="Create a new Blog Post!">
+      <input type="submit" value="Create a new Blog Post!"><br>
     </form>
     <%- include ('partials/footer'); %>
