@@ -11,6 +11,8 @@ app.use(express.static('public')); //specify location of static assests
 app.set('views', __dirname + '/views'); //specify location of templates
 app.set('view engine', 'ejs'); //specify templating library
 
+//app.use(require('./controllers/auth'));
+
 function readAuthors(){
   //read the authors and return
   let authors = JSON.parse(fs.readFileSync('data/authors.json'));
